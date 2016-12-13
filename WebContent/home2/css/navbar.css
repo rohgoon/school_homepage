@@ -1,0 +1,253 @@
+@CHARSET "UTF-8";
+.menu-trigger { /* 메뉴 글자 버튼 */
+  cursor: pointer;
+ /* position: fixed;
+  padding: 5px;
+  top: 0;
+  right: 0; */
+  z-index: 100;
+  color: #fff;
+  padding: 5px;
+  
+  
+  
+}
+
+.menu-trigger.open { /* 메뉴 글자 버튼 오픈시 */
+  color: white;
+  
+}
+
+.nav-btn { /* .icon을 id로 교체해도 작동함 */
+  display: inline-block;
+  font: '맑은 고딕','고딕';
+  font-size: 0.8em;
+  
+}
+.nav-btn:hover{
+	color: rgb(255, 167, 167);
+}
+
+
+#nav1.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '학교 안내'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+#nav2.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '학교 소식'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+#nav3.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '학생/학부모 마당'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+#nav4.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '교직원 마당'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+#nav5.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '교수/학습센터'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+#nav6.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '영상/보도물'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+#nav7.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '입시 안내'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+
+
+/* nav 리스트 시작 */ 
+#nav-overlay1,
+#nav-overlay2,
+#nav-overlay3,
+#nav-overlay4,
+#nav-overlay5,
+#nav-overlay6,
+#nav-overlay7
+{
+  overflow: hidden;
+  position: inherit;
+  width: 100%;
+  height: 60%; /* nav 리스트 보드 사이즈 */ 
+}
+
+#nav-overlay1 nav,
+#nav-overlay2 nav, 
+#nav-overlay3 nav, 
+#nav-overlay4 nav, 
+#nav-overlay5 nav, 
+#nav-overlay6 nav, 
+#nav-overlay7 nav{
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  list-style: none;
+  z-index: 90;
+  -webkit-transition: top 350ms ease;
+  transition: top 350ms ease;
+}
+
+#nav-overlay1 nav li, 
+#nav-overlay2 nav li, 
+#nav-overlay3 nav li, 
+#nav-overlay4 nav li, 
+#nav-overlay5 nav li, 
+#nav-overlay6 nav li, 
+#nav-overlay7 nav li{
+  display: block;
+  text-align: center;
+  margin: 7px; /* 리스트 마진 */ 
+}
+
+#nav-overlay1 nav a, #nav-overlay1 nav a:visited, 
+#nav-overlay2 nav a, #nav-overlay2 nav a:visited, 
+#nav-overlay3 nav a, #nav-overlay3 nav a:visited, 
+#nav-overlay4 nav a, #nav-overlay4 nav a:visited, 
+#nav-overlay5 nav a, #nav-overlay5 nav a:visited, 
+#nav-overlay6 nav a, #nav-overlay6 nav a:visited, 
+#nav-overlay7 nav a, #nav-overlay7 nav a:visited{
+  font-size: 1.4em; /* 메뉴 리스트 폰트 사이즈 */ 
+  font-weight: bold;
+  letter-spacing: 15px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#nav-overlay1 nav a:hover, #nav-overlay1 nav a:focus, #nav-overlay1 nav a:visited, #nav-overlay1 nav a:visited:hover, #nav-overlay1 nav a:visited:focus, #nav-overlay1 nav a:visited:visited, 
+#nav-overlay2 nav a:hover, #nav-overlay2 nav a:focus, #nav-overlay2 nav a:visited, #nav-overlay2 nav a:visited:hover, #nav-overlay2 nav a:visited:focus, #nav-overlay2 nav a:visited:visited,
+#nav-overlay3 nav a:hover, #nav-overlay3 nav a:focus, #nav-overlay3 nav a:visited, #nav-overlay3 nav a:visited:hover, #nav-overlay3 nav a:visited:focus, #nav-overlay3 nav a:visited:visited,
+#nav-overlay4 nav a:hover, #nav-overlay4 nav a:focus, #nav-overlay4 nav a:visited, #nav-overlay4 nav a:visited:hover, #nav-overlay4 nav a:visited:focus, #nav-overlay4 nav a:visited:visited,
+#nav-overlay5 nav a:hover, #nav-overlay5 nav a:focus, #nav-overlay5 nav a:visited, #nav-overlay5 nav a:visited:hover, #nav-overlay5 nav a:visited:focus, #nav-overlay5 nav a:visited:visited,
+#nav-overlay6 nav a:hover, #nav-overlay6 nav a:focus, #nav-overlay6 nav a:visited, #nav-overlay6 nav a:visited:hover, #nav-overlay6 nav a:visited:focus, #nav-overlay6 nav a:visited:visited,
+#nav-overlay7 nav a:hover, #nav-overlay7 nav a:focus, #nav-overlay7 nav a:visited, #nav-overlay7 nav a:visited:hover, #nav-overlay7 nav a:visited:focus, #nav-overlay7 nav a:visited:visited
+{	text-decoration: underline;
+	
+ }
+
+#nav-overlay1.open nav,
+#nav-overlay2.open nav,
+#nav-overlay3.open nav,
+#nav-overlay4.open nav,
+#nav-overlay5.open nav,
+#nav-overlay6.open nav,
+#nav-overlay7.open nav{ top: 0; }
+
+#nav-overlay1:before, #nav-overlay1:after, 
+#nav-overlay2:before, #nav-overlay2:after,
+#nav-overlay3:before, #nav-overlay3:after,
+#nav-overlay4:before, #nav-overlay4:after,
+#nav-overlay5:before, #nav-overlay5:after,
+#nav-overlay6:before, #nav-overlay6:after,
+#nav-overlay7:before, #nav-overlay7:after
+{
+  content: "";
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  height: 52.6%; 
+  width: 100%;
+  background: rgba(255, 167, 167, .7); 
+  transition: transform 350ms, -webkit-transform 350ms;
+}
+
+#nav-overlay1:before,
+#nav-overlay2:before,
+#nav-overlay3:before,
+#nav-overlay4:before,
+#nav-overlay5:before,
+#nav-overlay6:before,
+#nav-overlay7:before
+{
+  left: 0;
+  -webkit-transform: skew(50deg) translateX(-200%);
+  transform: skew(50deg) translateX(-200%);
+  clip: rect(auto 50vw auto auto);
+}
+@media (min-width: 500px) {
+
+#nav-overlay1:before,
+#nav-overlay2:before,
+#nav-overlay3:before,
+#nav-overlay4:before,
+#nav-overlay5:before,
+#nav-overlay6:before,
+#nav-overlay7:before
+{
+  -webkit-transform: skew(50deg) translateX(-150%);
+  transform: skew(50deg) translateX(-150%);
+}
+}
+/* 확인 아래로 */
+#nav-overlay1.open:before,
+#nav-overlay2.open:before,
+#nav-overlay3.open:before,
+#nav-overlay4.open:before,
+#nav-overlay5.open:before,
+#nav-overlay6.open:before,
+#nav-overlay7.open:before
+{
+  -webkit-transform: skew(0) translateX(0%);
+  transform: skew(0) translateX(0%);
+}
+
+#nav-overlay1:after,
+#nav-overlay2:after,
+#nav-overlay3:after,
+#nav-overlay4:after,
+#nav-overlay5:after,
+#nav-overlay6:after,
+#nav-overlay7:after
+{
+  right: 0;
+  -webkit-transform: skew(50deg) translateX(200%);
+  transform: skew(50deg) translateX(200%);
+  clip: rect(auto auto auto 50vw);
+}
+@media (min-width: 500px) {
+
+#nav-overlay1:after,
+#nav-overlay2:after,
+#nav-overlay3:after,
+#nav-overlay4:after,
+#nav-overlay5:after,
+#nav-overlay6:after,
+#nav-overlay7:after
+{
+  -webkit-transform: skew(50deg) translateX(150%);
+  transform: skew(50deg) translateX(150%);
+}
+}
+
+#nav-overlay1.open:after,
+#nav-overlay2.open:after,
+#nav-overlay3.open:after,
+#nav-overlay4.open:after,
+#nav-overlay5.open:after,
+#nav-overlay6.open:after,
+#nav-overlay7.open:after
+{
+  -webkit-transform: skew(0) translateX(0%);
+  transform: skew(0) translateX(0%);
+}

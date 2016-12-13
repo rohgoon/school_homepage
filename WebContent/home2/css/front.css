@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	
+}
+
+#backBoard {
+	/* border: 1px solid yellow; */
+	width: 100%;
+	height: 1200px;
+	position: relative;
+	background-color: rgba(20, 100, 170, 0.5);
+}
+
+#head {
+	/* border: 1px solid red; */
+	width: 90%;
+	height: auto;
+	border-radius: 10px;
+	position: absolute;
+	left: 5%;
+	top: 50px;
+	background-color: rgb(20, 100, 170);
+	z-index: 95;
+}
+#head.sticky_header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgb(20, 100, 170);
+	height: 80px;
+	width: inherit;
+	border-radius: 0;
+}
+
+#head div#headInner{
+		float: left;
+		width: 500px;
+		height: auto;
+		margin-top:25px;
+	}
+img#homeLogo {
+	height: 90px;
+	margin: 10px;
+	float: left;
+}
+
+
+#head #loginBtn {
+	float: right;
+	width: 80px;
+	padding: 30px 10px 30px 10px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border: none;
+	margin: 14px 20px 14px 30px;
+	border-radius: 5px;
+	color: rgb(20, 100, 170);
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#mainBoard {
+	/* border: 1px solid red; */
+	width: 100%;
+	height: 95%;
+}
+
+#topBoard {
+	/* border: 1px solid green; */
+	width: 100%;
+	height: 55%;
+	background: url("../image/front1-1.jpg") no-repeat bottom;
+	background-attachment: scroll;
+	background-size: cover;
+	
+	
+}
+
+#bottomBoard {
+	/* border: 2px solid orange; */
+	width: 100%;
+	height: auto;
+	border-top: 5px solid rgba(20, 100, 170, 0.2);
+	background-color: rgba(255, 255, 255, 0.7);
+	
+}
+
+footer {
+	margin: 0;
+	width: 100%;
+	height: 60px;
+	background-color: rgb(20, 100, 170);
+	color: #fff;
+	text-align: center;
+	padding-top: 10px;
+}

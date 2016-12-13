@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/path/to/material-design-iconic-font.min.css"
+	rel="stylesheet">
+<style type="text/css">
+.menu-trigger { /* 메뉴 글자 버튼 */
+  cursor: pointer;
+  position: fixed;
+  padding: 1rem;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  color: black;
+  
+}
+
+.menu-trigger.open { /* 메뉴 글자 버튼 오픈시 */
+  color: white;
+  
+}
+
+#nav1 { /* .icon을 id로 교체해도 작동함 */
+  display: inline-block;
+  font: '맑은 고딕','고딕';
+  font-size: 1em;
+  
+}
+
+#nav1.icon-menu:before {/* .icon을 id로 교체해도 작동함 */
+  content: '학교안내'; /* 메뉴 아이콘 글자 지정 */
+  font-size: 1em;
+} 
+
+#nav-overlay {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#nav-overlay nav {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  list-style: none;
+  z-index: 90;
+  -webkit-transition: top 350ms ease;
+  transition: top 350ms ease;
+}
+
+#nav-overlay nav li {
+  display: block;
+  text-align: center;
+  margin: 5px; /* 리스트 마진 */
+}
+
+#nav-overlay nav a, #nav-overlay nav a:visited {
+  font-size: 1em; /* 메뉴 리스트 폰트 사이즈 */
+  font-weight: 400;
+  letter-spacing: 15px;
+  line-height: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#nav-overlay nav a:hover, #nav-overlay nav a:focus, #nav-overlay nav a:visited, #nav-overlay nav a:visited:hover, #nav-overlay nav a:visited:focus, #nav-overlay nav a:visited:visited { text-decoration: underline; }
+
+#nav-overlay.open nav { top: 0; }
+
+#nav-overlay:before, #nav-overlay:after {
+  content: "";
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  height: 55%;
+  width: 100%;
+  background: rgba(92, 209, 240, .8); /* 백그라운드 배경색 */
+  transition: transform 350ms, -webkit-transform 350ms;
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+#nav-overlay:before {
+  left: 0;
+  -webkit-transform: skew(50deg) translateX(-200%);
+  transform: skew(50deg) translateX(-200%);
+  clip: rect(auto 50vw auto auto);
+}
+@media (min-width: 500px) {
+
+#nav-overlay:before {
+  -webkit-transform: skew(50deg) translateX(-150%);
+  transform: skew(50deg) translateX(-150%);
+}
+}
+
+#nav-overlay.open:before {
+  -webkit-transform: skew(0) translateX(0%);
+  transform: skew(0) translateX(0%);
+}
+
+#nav-overlay:after {
+  right: 0;
+  -webkit-transform: skew(50deg) translateX(200%);
+  transform: skew(50deg) translateX(200%);
+  clip: rect(auto auto auto 50vw);
+}
+@media (min-width: 500px) {
+
+#nav-overlay:after {
+  -webkit-transform: skew(50deg) translateX(150%);
+  transform: skew(50deg) translateX(150%);
+}
+}
+
+#nav-overlay.open:after {
+  -webkit-transform: skew(0) translateX(0%);
+  transform: skew(0) translateX(0%);
+}
+</style>
+<script src="js/jquery-3.1.1.slim.min.js"></script> 
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	
+	  $('.trigger').click(function() {
+	    var $this = $(this),
+	    notThis = $this.hasClass('open'),
+	    thisNav = $this.attr("rel");
+	    if (!notThis) {
+	     $('.triggered-area, .trigger').removeClass('open');
+	     if ( $( '.trigger' ).hasClass( "block-scroll" ) ){
+	      $('html').removeClass('disable-scroll');
+	      $('#overlay-mobile').removeClass('visible');
+	     }
+	    }
+	    $this.toggleClass('open');
+	    $("#"+thisNav).toggleClass('open');
+	    if ( $( this ).hasClass( "block-scroll" ) ){
+	     $('html').toggleClass('disable-scroll');
+	     $('#overlay-mobile').toggleClass('visible');
+	    }
+	  });
+	  $(document).on('click', function(event) {
+	    if (!$(event.target).closest('.triggered-area, .trigger').length) {
+	     $('.triggered-area, .trigger').removeClass('open');
+	     if ( $( '.trigger' ).hasClass( "block-scroll" ) ){
+	      $('html').removeClass('disable-scroll');
+	      $('#overlay-mobile').removeClass('visible');
+	     }
+	    }
+	  });
+	});
+</script>
+</head>
+<body>
+	<span class="menu-trigger trigger icon icon-menu" rel="nav-overlay" id="nav1"></span>
+	<div id="nav-overlay">
+		<nav>
+			<li><a href="#">학교안내
+			</a></li>
+			<li><a href="#">학교소식
+			</a></li>
+			<li><a href="#">학생/학부모 마당
+			</a></li>
+			<li><a href="#">교직원 마당
+			</a></li>
+			<li><a href="#">교수학습 센터
+			</a></li>
+			<li><a href="#">영상/보도물
+			</a></li>
+			<li><a href="#">입시 안내
+			</a></li>
+		</nav>
+
+	</div>
+
+</body>
+
+</html>

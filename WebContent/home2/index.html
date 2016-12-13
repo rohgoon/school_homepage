@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>대구 IT 고등학교</title>
+<link type="text/css" rel="stylesheet" href="css/front.css">
+<link type="text/css" rel="stylesheet" href="css/navbar.css">
+<style type="text/css">
+#head #menuSlider {
+	display: none;
+	float: left;
+	background: none;
+	border: none;
+	font-size: 2em;
+	margin: 13px 10px 10px 10px;
+}
+
+#head #menuSlider:focus {
+	outline: 0;
+}
+
+
+
+#menuSlider_wrap {
+	position: fixed;
+	width: 350px;
+	height: 100%;
+	top: 80px;
+	background-color: rgba(0, 0, 0, 0.8);
+	left: -350px;
+}
+
+#menuSlider_wrap ul#ms_front{
+	margin: 0;
+	padding: 0;
+	margin-left: 80px;
+	margin-top: 100px;
+}
+#ms_front li {
+	list-style: none;
+}
+
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/navbar.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		// sticky_header 커스텀 수행 시작
+		var headerOffset = $('#head').offset().top;
+
+		$(window).on('scroll', function() {
+			if ($(window).scrollTop() > headerOffset) {
+				$('#head').addClass("sticky_header");
+				$('#topBoard').css('height', '80px');
+				$('#loginBtn').css({
+					'padding' : '10px',
+					'margin' : '20px'
+				});
+				$('#headInner').css('visibility', 'hidden');
+				$('#homeLogo').attr('src', 'image/logoSmall.png').css({
+					'height' : '50px',
+					'margin' : '15px'
+				});
+				$('#head #menuSlider').css('display', 'block');
+
+			} else {
+				$('#head').removeClass("sticky_header");
+				$('#topBoard').css('height', '55%');
+				$('#loginBtn').css({
+					'padding' : '30px 10px 30px 10px',
+					'margin' : '14px 20px 14px 30px'
+				});
+				$('#headInner').css('visibility', 'visible');
+				$('#homeLogo').attr('src', 'image/logo.png').css({
+					'height' : '90px',
+					'margin' : '10px'
+				});
+				$('#head #menuSlider').css('display', 'none');
+
+			}
+
+		}); // sticky_header 커스텀 끝
+
+		//메뉴 슬라이더 버튼 등 시작		
+		$('#menuSlider').on('mouseover', function() {
+			$(this).find('img').attr('src', 'image/menuSlider2.png');
+		});
+		$('#menuSlider').on('mouseout', function() {
+			$(this).find('img').attr('src', 'image/menuSlider1.png');
+		});
+		
+		var $aside = $('aside');
+		var $asideButton = $('#menuSlider');
+		
+		$asideButton.on('click', function() {
+			$aside.toggleClass("open"); // boolean 대신에 가상 클래스로 줌. 다른 방식도 가능
+			
+			if ($aside.hasClass("open")) {
+				$aside.stop().animate({'left':'-10px'}, 300); 
+				
+			}else {
+				$aside.stop().animate({'left':'-350px'}, 300); 
+				
+			}
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+	<div id="backBoard">
+		<header id="head">
+			<button id="menuSlider">
+				<img alt="menuSlider" src="image/menuSlider1.png" width="50px">
+			</button>
+
+
+
+			<a href="index.html"><img alt="homeLogo" id="homeLogo"
+				src="image/logo.png"></a>
+
+
+
+
+
+			<div id="headInner">
+				<span class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay1" id="nav1"></span> <span
+					class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay2" id="nav2"></span> <span
+					class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay3" id="nav3"></span> <span
+					class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay4" id="nav4"></span> <span
+					class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay5" id="nav5"></span> <span
+					class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay6" id="nav6"></span> <span
+					class="menu-trigger trigger icon icon-menu nav-btn"
+					rel="nav-overlay7" id="nav7"></span>
+			</div>
+			<button id="loginBtn">로그인</button>
+		</header>
+
+		<section id="mainBoard">
+			<article id="topBoard">
+
+
+				<div id="nav-overlay1">
+					<nav>
+						<li><a href="#">학교장 환영사</a></li>
+						<li><a href="#">학교 연혁</a></li>
+						<li><a href="#">학교 상징물 </a></li>
+						<li><a href="#">교육 목표</a></li>
+						<li><a href="#">교육 과정</a></li>
+						<li><a href="#">교직원 소개</a></li>
+						<li><a href="#">오시는 길</a></li>
+					</nav>
+				</div>
+
+				<div id="nav-overlay2">
+					<nav>
+						<li><a href="school_board2.html">공지사항</a></li>
+						<li><a href="school_board2.html">가정통신문</a></li>
+						<li><a href="school_board2.html">학교 평가</a></li>
+						<li><a href="school_board2.html">방과후 학교</a></li>
+						<li><a href="school_board2.html">교육 과정</a></li>
+						<li><a href="school_board2.html">학사 일정</a></li>
+						<li><a href="school_board2.html">채용공고</a></li>
+					</nav>
+				</div>
+
+				<div id="nav-overlay3">
+					<nav>
+						<li><a href="school_board3.html">학생 마당</a></li>
+						<li><a href="school_board3.html">학부모 마당</a></li>
+						<li><a href="school_board3.html">동아리</a></li>
+						<li><a href="school_board3.html">Wee 클래스</a></li>
+						<li><a href="school_board3.html">학교 규정</a></li>
+						<li><a href="school_board3.html">학내경진대회</a></li>
+						<li><a href="school_board3.html">학교정보공개</a></li>
+						<li><a href="school_board3.html">행정실 소식</a></li>
+						<li><a href="school_board3.html">학교운영위</a></li>
+					</nav>
+				</div>
+
+				<div id="nav-overlay4">
+					<nav>
+						<li><a href="school_board4.html">교원평가</a></li>
+						<li><a href="school_board4.html">연수자료</a></li>
+						<li><a href="school_board4.html">교사카페</a></li>
+					</nav>
+				</div>
+
+				<div id="nav-overlay5">
+					<nav>
+						<li><a href="school_board5.html">수업 자료</a></li>
+						<li><a href="school_board5.html">수업 과제</a></li>
+						<li><a href="school_board5.html">자기주도학습</a></li>
+						<li><a href="school_board5.html">진로자료</a></li>
+					</nav>
+				</div>
+
+				<div id="nav-overlay6">
+					<nav>
+						<li><a href="school_board6.html">학내행사사진</a></li>
+						<li><a href="school_board6.html">TV보도</a></li>
+						<li><a href="school_board6.html">신문보도</a></li>
+						<li><a href="school_board6.html">학생제작UCC</a></li>
+					</nav>
+				</div>
+
+				<div id="nav-overlay7">
+					<nav>
+						<li><a href="school_board7.html">대학별 입시요강</a></li>
+						<li><a href="school_board7.html">진학상담</a></li>
+					</nav>
+				</div>
+			</article>
+			
+			<article id="bottomBoard">
+				
+			</article>
+			
+			<aside id="menuSlider_wrap">
+				
+					<ul id="ms_front">
+						<li><a href="school_board1.html">학교 안내</a>
+						<li><a href="school_board2.html">학교 소식</a>
+						<li><a href="school_board3.html">열린 마당</a>
+						<li><a href="school_board4.html">교직원 마당</a>
+						<li><a href="school_board5.html">학습센터</a>
+						<li><a href="school_board6.html">영상/보도물</a>
+						<li><a href="school_board7.html">입시안내</a>
+					</ul>
+				
+			</aside>
+		</section>
+		<footer>
+			<p>Tel: 010-6422-4733, Fax:053-722-0840, E-Mail:
+				webmaster@dgit.or.kr, 주소: 대구광역시 남구 중앙대로 220, 3층(대명동, 다산빌딩)</p>
+			<p>Copyright ⓒ. 2016 Roh.C.G.</p>
+		</footer>
+
+
+	</div>
+</body>
+</html>
