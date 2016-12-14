@@ -23,7 +23,7 @@
 
 #menuSlider_wrap {
 	position: fixed;
-	width: 350px;
+	width: 250px;
 	height: 100%;
 	top: 80px;
 	background-color: rgba(0, 0, 0, 0.8);
@@ -39,7 +39,11 @@
 #ms_front li {
 	list-style: none;
 }
-
+#ms_front li a{
+	color: #fff;
+	font-weight: bold;
+	
+}
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/navbar.js"></script>
@@ -84,7 +88,7 @@
 				$('#head #menuSlider').css('display', 'none');
 				$('#topBoard div').css('visibility', 'visible');
 				$aside.css('visibility', 'hidden');
-				$aside.stop().animate({'left':'-350px'}, 300);
+				$aside.stop().animate({'left':'-250px'}, 300);
 				$aside.removeClass("open"); 
 
 			}
@@ -108,7 +112,7 @@
 				$aside.stop().animate({'left':'-10px'}, 300); 
 				
 			}else {
-				$aside.stop().animate({'left':'-350px'}, 300); 
+				$aside.stop().animate({'left':'-250px'}, 300); 
 				
 			}
 		});
