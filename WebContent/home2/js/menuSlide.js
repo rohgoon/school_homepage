@@ -47,7 +47,7 @@ $(function() {
 		}); // sticky_header 커스텀 끝
 
 		//슬라이드 다운시 메뉴 슬라이더 버튼 등 시작		
-		$('#menuSlider').on('mouseover', function() {
+		$('#menuSlider').on('mouseover click', function() {
 			$(this).find('img').attr('src', 'image/menuSlider2.png');
 		});
 		$('#menuSlider').on('mouseout', function() {
@@ -73,7 +73,7 @@ $(function() {
 		// 메뉴 슬라이더내 내부 이벤트
 			
 		
-			$('.ms_li1').on('mouseenter', function() {
+			$('.ms_li1').on('mouseenter click focusin', function() {
 				$('.ms_li1').removeClass('listOpen');
 				$('.ms_li1').find('ul').css('display', 'none');
 				var $this = $(this);				
@@ -87,7 +87,7 @@ $(function() {
 				
 							
 			});
-			$('.ms_li1').on('mouseleave', function() {
+			$('.ms_li1').on('mouseleave blur', function() {
 				
 				var $this = $(this);
 				if ($this.not('listOpen')) {
