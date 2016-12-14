@@ -37,18 +37,26 @@
 
 #ms_front li {
 	list-style: none;
-	margin-bottom: 20px;
-	padding: 10px;
+	margin-bottom: 15px;
+	padding: 10px 0px 10px 10px;
 }
 
 #ms_front li:hover {
-	background-color: rgba(100, 100, 100, 0.5);
+	background-color: rgba(255, 122, 122, 0.5);
 }
 
 #ms_front li a {
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
+}
+#ms_front li>ul li{
+	padding: 0px 0px 0px 20px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+#ms_front li>ul{
+	display: none;
 }
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
@@ -111,9 +119,9 @@
 		});
 
 		$asideButton.on('click', function() {
-			$aside.toggleClass("open"); // boolean 대신에 가상 클래스로 줌. 다른 방식도 가능
+			$aside.toggleClass("asideOpen"); // boolean 대신에 가상 클래스로 줌. 다른 방식도 가능
 
-			if ($aside.hasClass("open")) {
+			if ($aside.hasClass("asideOpen")) {
 				$aside.stop().animate({
 					'left' : '-10px'
 				}, 300);
@@ -125,6 +133,26 @@
 
 			}
 		});
+		
+		// 메뉴 슬라이더내 내부 이벤트
+			$('.ms_li1').on('mouseover', function() {
+				$('.ms_li1').removeClass('listOpen');
+				$('.ms_li1').find('ul').css('display', 'none');
+				var $this = $(this);				
+				$this.addClass('listOpen');
+				$this.find('ul').css('display', 'block');			
+							
+			});
+			$('.ms_li1').on('mouseout', function() {
+				
+				var $this = $(this);				
+				
+				$this.find('ul').css('display', 'none');				
+							
+			});
+			
+			
+		
 
 	});
 </script>
@@ -256,21 +284,80 @@
 			</article>
 
 			<article id="bottomBoard"></article>
-
+			
+			<!-- menuSlider 기능 추가 -->
 			<aside id="menuSlider_wrap">
 
 				<ul id="ms_front">
-					<li><a href="school_board1.html">학교 안내</a>
+					<li class="ms_li1"><a href="school_board1.html">학교 안내</a>
 						<ul>
-
-
-						</ul></li>
-					<li><a href="school_board2.html">학교 소식</a></li>
-					<li><a href="school_board3.html">열린 마당</a></li>
-					<li><a href="school_board4.html">교직원 마당</a></li>
-					<li><a href="school_board5.html">학습센터</a></li>
-					<li><a href="school_board6.html">영상/보도물</a></li>
-					<li><a href="school_board7.html">입시안내</a></li>
+							<li><a href="#">학교장 환영사</a></li>
+							<li><a href="#">학교 연혁</a></li>
+							<li><a href="#">학교 상징물 </a></li>
+							<li><a href="#">교육 목표</a></li>
+							<li><a href="#">교육 과정</a></li>
+							<li><a href="#">교직원 소개</a></li>
+							<li><a href="#">오시는 길</a></li>
+						</ul>
+					</li>
+					<li class="ms_li1"><a href="school_board2.html">학교 소식</a>
+						<ul>
+							<li><a href="school_board2.html">공지사항</a></li>
+							<li><a href="school_board2.html">가정통신문</a></li>
+							<li><a href="school_board2.html">학교 평가</a></li>
+							<li><a href="school_board2.html">방과후 학교</a></li>
+							<li><a href="school_board2.html">교육 과정</a></li>
+							<li><a href="school_board2.html">학사 일정</a></li>
+							<li><a href="school_board2.html">채용공고</a></li>
+						</ul>
+					</li>
+					<li class="ms_li1"><a href="school_board3.html">학생/학부모 마당</a>
+						<ul>
+							<li><a href="school_board3.html">학생 마당</a></li>
+							<li><a href="school_board3.html">학부모 마당</a></li>
+							<li><a href="school_board3.html">동아리</a></li>
+							<li><a href="school_board3.html">Wee 클래스</a></li>
+							<li><a href="school_board3.html">학교 규정</a></li>
+							<li><a href="school_board3.html">학내경진대회</a></li>
+							<li><a href="school_board3.html">학교정보공개</a></li>
+							<li><a href="school_board3.html">행정실 소식</a></li>
+							<li><a href="school_board3.html">학교운영위</a></li>
+						</ul>
+					
+					</li>
+					<li class="ms_li1"><a href="school_board4.html">교직원 마당</a>
+						<ul>
+							<li><a href="school_board4.html">교원평가</a></li>
+							<li><a href="school_board4.html">연수자료</a></li>
+							<li><a href="school_board4.html">교사카페</a></li>
+						</ul>
+					
+					</li>
+					<li class="ms_li1"><a href="school_board5.html">학습센터</a>
+						<ul>
+							<li><a href="school_board5.html">수업 자료</a></li>
+							<li><a href="school_board5.html">수업 과제</a></li>
+							<li><a href="school_board5.html">자기주도학습</a></li>
+							<li><a href="school_board5.html">진로자료</a></li>
+						</ul>
+					
+					</li>
+					<li class="ms_li1"><a href="school_board6.html">영상/보도물</a>
+						<ul>
+							<li><a href="school_board6.html">학내행사사진</a></li>
+							<li><a href="school_board6.html">TV보도</a></li>
+							<li><a href="school_board6.html">신문보도</a></li>
+							<li><a href="school_board6.html">학생제작UCC</a></li>
+						</ul>
+					
+					</li>
+					<li class="ms_li1"><a href="school_board7.html">입시안내</a>
+						<ul>
+							<li><a href="school_board7.html">대학별 입시요강</a></li>
+							<li><a href="school_board7.html">진학상담</a></li>
+						</ul>
+					
+					</li>
 				</ul>
 
 			</aside>
