@@ -12,7 +12,7 @@
 	background: none;
 	border: none;
 	font-size: 2em;
-	margin: 13px 10px 10px 10px;
+	margin: 13px 5px 10px 20px;
 }
 
 #head #menuSlider:focus {
@@ -45,7 +45,10 @@
 <script src="js/navbar.js"></script>
 <script type="text/javascript">
 	$(function() {
-
+		var $aside = $('aside');
+		var $asideButton = $('#menuSlider'); // 슬라이드 버튼 요소
+		
+		
 		// sticky_header 커스텀 수행 시작
 		var headerOffset = $('#head').offset().top;
 
@@ -64,6 +67,7 @@
 				});
 				$('#head #menuSlider').css('display', 'block');
 				$('#topBoard div').css('visibility', 'hidden');
+				$aside.css('visibility', 'visible');
 
 			} else {
 				$('#head').removeClass("sticky_header");
@@ -79,12 +83,13 @@
 				});
 				$('#head #menuSlider').css('display', 'none');
 				$('#topBoard div').css('visibility', 'visible');
+				$aside.css('visibility', 'hidden');
 
 			}
 
 		}); // sticky_header 커스텀 끝
 
-		//메뉴 슬라이더 버튼 등 시작		
+		//슬라이드 다운시 메뉴 슬라이더 버튼 등 시작		
 		$('#menuSlider').on('mouseover', function() {
 			$(this).find('img').attr('src', 'image/menuSlider2.png');
 		});
@@ -92,8 +97,7 @@
 			$(this).find('img').attr('src', 'image/menuSlider1.png');
 		});
 		
-		var $aside = $('aside');
-		var $asideButton = $('#menuSlider');
+		
 		
 		$asideButton.on('click', function() {
 			$aside.toggleClass("open"); // boolean 대신에 가상 클래스로 줌. 다른 방식도 가능
