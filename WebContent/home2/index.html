@@ -52,7 +52,7 @@
 }
 #ms_front li a span{
 	font-size: 10px;
-	margin-left: 10px;
+	margin-left: 5px;
 	
 }
 #ms_front li>ul li{
@@ -152,6 +152,7 @@
 				if ($this.hasClass('listOpen')) {
 					$this.find('ul').css('display', 'block');
 					$this.find('ul').animate({'opacity':'1'}, 500);
+					$this.find('span').text('▲');
 				}
 				
 							
@@ -163,6 +164,7 @@
 				
 				$this.find('ul').css('display', 'none');	
 				$('.ms_li1').not('.listOpen').find('ul').css('opacity', 0);
+				$this.find('span').text('▼');
 				}
 			});
 			
@@ -304,7 +306,7 @@
 			<aside id="menuSlider_wrap">
 
 				<ul id="ms_front">
-					<li class="ms_li1"><a href="school_board1.html">학교 안내 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board1.html">학교 안내 <span>▼</span></a>
 						<ul>
 							<li><a href="#">학교장 환영사</a></li>
 							<li><a href="#">학교 연혁</a></li>
@@ -315,7 +317,7 @@
 							<li><a href="#">오시는 길</a></li>
 						</ul>
 					</li>
-					<li class="ms_li1"><a href="school_board2.html">학교 소식 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board2.html">학교 소식 <span>▼</span></a>
 						<ul>
 							<li><a href="school_board2.html">공지사항</a></li>
 							<li><a href="school_board2.html">가정통신문</a></li>
@@ -326,7 +328,7 @@
 							<li><a href="school_board2.html">채용공고</a></li>
 						</ul>
 					</li>
-					<li class="ms_li1"><a href="school_board3.html">학생/학부모 마당 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board3.html">학생/학부모 마당 <span>▼</span></a>
 						<ul>
 							<li><a href="school_board3.html">학생 마당</a></li>
 							<li><a href="school_board3.html">학부모 마당</a></li>
@@ -340,7 +342,7 @@
 						</ul>
 					
 					</li>
-					<li class="ms_li1"><a href="school_board4.html">교직원 마당 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board4.html">교직원 마당 <span>▼</span></a>
 						<ul>
 							<li><a href="school_board4.html">교원평가</a></li>
 							<li><a href="school_board4.html">연수자료</a></li>
@@ -348,7 +350,7 @@
 						</ul>
 					
 					</li>
-					<li class="ms_li1"><a href="school_board5.html">학습센터 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board5.html">학습센터 <span>▼</span></a>
 						<ul>
 							<li><a href="school_board5.html">수업 자료</a></li>
 							<li><a href="school_board5.html">수업 과제</a></li>
@@ -357,7 +359,7 @@
 						</ul>
 					
 					</li>
-					<li class="ms_li1"><a href="school_board6.html">영상/보도물 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board6.html">영상/보도물 <span>▼</span></a>
 						<ul>
 							<li><a href="school_board6.html">학내행사사진</a></li>
 							<li><a href="school_board6.html">TV보도</a></li>
@@ -366,7 +368,7 @@
 						</ul>
 					
 					</li>
-					<li class="ms_li1"><a href="school_board7.html">입시안내 <span> ▲</span></a>
+					<li class="ms_li1"><a href="school_board7.html">입시안내 <span>▼</span></a>
 						<ul>
 							<li><a href="school_board7.html">대학별 입시요강</a></li>
 							<li><a href="school_board7.html">진학상담</a></li>
