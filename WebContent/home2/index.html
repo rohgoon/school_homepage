@@ -84,6 +84,8 @@
 				$('#head #menuSlider').css('display', 'none');
 				$('#topBoard div').css('visibility', 'visible');
 				$aside.css('visibility', 'hidden');
+				$aside.stop().animate({'left':'-350px'}, 300);
+				$aside.removeClass("open"); 
 
 			}
 
