@@ -8,7 +8,8 @@ $(function() {
 		$(window).on('scroll', function() {
 			if ($(window).scrollTop() > headerOffset) {
 				$('#head').addClass("sticky_header");
-				$('#topBoard').css('height', '80px');
+				//$('#topBoard').css('height', '80px');
+				$('#topBoard').stop().animate({'height':80+'px'}, 300);
 				$('#loginBtn').css({
 					'padding' : '10px',
 					'margin' : '20px'
@@ -24,7 +25,8 @@ $(function() {
 
 			} else {
 				$('#head').removeClass("sticky_header");
-				$('#topBoard').css('height', '55%');
+				//$('#topBoard').css('height', '55%');
+				$('#topBoard').stop().animate({'height':55+'%'}, 300);
 				$('#loginBtn').css({
 					'padding' : '30px 10px 30px 10px',
 					'margin' : '14px 20px 14px 30px'

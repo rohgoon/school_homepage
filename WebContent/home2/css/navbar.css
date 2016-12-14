@@ -166,7 +166,7 @@
   position: absolute;
   z-index: 50;
   top: 0;
-  height: 52.6%; 
+  height: 52.7%; 
   width: 100%;
   background: rgba(255, 167, 167, .7); 
   transition: transform 350ms, -webkit-transform 350ms;
