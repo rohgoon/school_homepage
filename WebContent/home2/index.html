@@ -57,6 +57,7 @@
 }
 #ms_front li>ul{
 	display: none;
+	opacity: 0;
 }
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
@@ -135,20 +136,29 @@
 		});
 		
 		// 메뉴 슬라이더내 내부 이벤트
-			$('.ms_li1').on('mouseover', function() {
+			
+		
+			$('.ms_li1').on('mouseenter', function() {
 				$('.ms_li1').removeClass('listOpen');
 				$('.ms_li1').find('ul').css('display', 'none');
 				var $this = $(this);				
 				$this.addClass('listOpen');
-				$this.find('ul').css('display', 'block');			
+				
+				if ($this.hasClass('listOpen')) {
+					$this.find('ul').css('display', 'block');
+					$this.find('ul').animate({'opacity':'1'}, 500);
+				}
+				
 							
 			});
-			$('.ms_li1').on('mouseout', function() {
+			$('.ms_li1').on('mouseleave', function() {
+				//$('.ms_li1').removeClass('listOpen');
+				var $this = $(this);
+				if ($this.not('listOpen')) {
 				
-				var $this = $(this);				
-				
-				$this.find('ul').css('display', 'none');				
-							
+				$this.find('ul').css('display', 'none');	
+				$('.ms_li1').not('.listOpen').find('ul').css('opacity', 0);
+				}
 			});
 			
 			
