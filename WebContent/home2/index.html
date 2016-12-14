@@ -5,173 +5,15 @@
 <title>대구 IT 고등학교</title>
 <link type="text/css" rel="stylesheet" href="css/front.css">
 <link type="text/css" rel="stylesheet" href="css/navbar.css">
+<link type="text/css" rel="stylesheet" href="css/menuSlide.css">
 <style type="text/css">
-#head #menuSlider {
-	display: none;
-	float: left;
-	background: none;
-	border: none;
-	font-size: 2em;
-	margin: 13px 5px 10px 20px;
-}
 
-#head #menuSlider:focus {
-	outline: 0;
-}
-
-#menuSlider_wrap {
-	position: fixed;
-	width: 250px;
-	height: 100%;
-	top: 80px;
-	background-color: rgba(255, 167, 167, 0.8);
-	left: -350px;
-}
-
-#menuSlider_wrap ul#ms_front {
-	margin: 0;
-	padding: 0;
-	margin-left: 30px;
-	margin-top: 100px;
-}
-
-#ms_front li {
-	list-style: none;
-	margin-bottom: 15px;
-	padding: 10px 0px 10px 10px;
-}
-
-#ms_front li:hover {
-	background-color: rgba(255, 122, 122, 0.5);
-}
-
-#ms_front li a {
-	color: #fff;
-	font-weight: bold;
-	text-decoration: none;
-}
-#ms_front li a span{
-	font-size: 10px;
-	margin-left: 5px;
-	
-}
-#ms_front li>ul li{
-	padding: 0px 0px 0px 20px;
-	margin-bottom: 5px;
-	margin-top: 5px;
-}
-#ms_front li>ul{
-	display: none;
-	opacity: 0;
-}
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/navbar.js"></script>
+<script src="js/menuSlide.js"></script>
 <script type="text/javascript">
-	$(function() {
-		var $aside = $('aside');
-		var $asideButton = $('#menuSlider'); // 슬라이드 버튼 요소
-
-		// sticky_header 커스텀 수행 시작
-		var headerOffset = $('#head').offset().top;
-
-		$(window).on('scroll', function() {
-			if ($(window).scrollTop() > headerOffset) {
-				$('#head').addClass("sticky_header");
-				$('#topBoard').css('height', '80px');
-				$('#loginBtn').css({
-					'padding' : '10px',
-					'margin' : '20px'
-				});
-				$('#headInner').css('visibility', 'hidden');
-				$('#homeLogo').attr('src', 'image/logoSmall.png').css({
-					'height' : '50px',
-					'margin' : '15px'
-				});
-				$('#head #menuSlider').css('display', 'block');
-				$('#topBoard div').css('visibility', 'hidden');
-				$aside.css('visibility', 'visible');
-
-			} else {
-				$('#head').removeClass("sticky_header");
-				$('#topBoard').css('height', '55%');
-				$('#loginBtn').css({
-					'padding' : '30px 10px 30px 10px',
-					'margin' : '14px 20px 14px 30px'
-				});
-				$('#headInner').css('visibility', 'visible');
-				$('#homeLogo').attr('src', 'image/logo.png').css({
-					'height' : '90px',
-					'margin' : '10px'
-				});
-				$('#head #menuSlider').css('display', 'none');
-				$('#topBoard div').css('visibility', 'visible');
-				$aside.css('visibility', 'hidden');
-				$aside.stop().animate({
-					'left' : '-250px'
-				}, 300);
-				$aside.removeClass("asideOpen");
-
-			}
-
-		}); // sticky_header 커스텀 끝
-
-		//슬라이드 다운시 메뉴 슬라이더 버튼 등 시작		
-		$('#menuSlider').on('mouseover', function() {
-			$(this).find('img').attr('src', 'image/menuSlider2.png');
-		});
-		$('#menuSlider').on('mouseout', function() {
-			$(this).find('img').attr('src', 'image/menuSlider1.png');
-		});
-
-		$asideButton.on('click', function() {
-			$aside.toggleClass("asideOpen"); // boolean 대신에 가상 클래스로 줌. 다른 방식도 가능
-
-			if ($aside.hasClass("asideOpen")) {
-				$aside.stop().animate({
-					'left' : '-10px'
-				}, 300);
-
-			} else {
-				$aside.stop().animate({
-					'left' : '-250px'
-				}, 300);
-
-			}
-		});
-		
-		// 메뉴 슬라이더내 내부 이벤트
-			
-		
-			$('.ms_li1').on('mouseenter', function() {
-				$('.ms_li1').removeClass('listOpen');
-				$('.ms_li1').find('ul').css('display', 'none');
-				var $this = $(this);				
-				$this.addClass('listOpen');
-				
-				if ($this.hasClass('listOpen')) {
-					$this.find('ul').css('display', 'block');
-					$this.find('ul').animate({'opacity':'1'}, 500);
-					$this.find('span').text('▲');
-				}
-				
-							
-			});
-			$('.ms_li1').on('mouseleave', function() {
-				
-				var $this = $(this);
-				if ($this.not('listOpen')) {
-				
-				$this.find('ul').css('display', 'none');	
-				$('.ms_li1').not('.listOpen').find('ul').css('opacity', 0);
-				$this.find('span').text('▼');
-				}
-			});
-			
-			
-		
-
-	});
+	
 </script>
 </head>
 <body>
@@ -216,13 +58,13 @@
 				<div id="nav-overlay1">
 					<nav>
 						<ul>
-							<li><a href="#">학교장 환영사</a></li>
-							<li><a href="#">학교 연혁</a></li>
-							<li><a href="#">학교 상징물 </a></li>
-							<li><a href="#">교육 목표</a></li>
-							<li><a href="#">교육 과정</a></li>
-							<li><a href="#">교직원 소개</a></li>
-							<li><a href="#">오시는 길</a></li>
+							<li><a href="school_board1.html">학교장 환영사</a></li>
+							<li><a href="school_board1.html">학교 연혁</a></li>
+							<li><a href="school_board1.html">학교 상징물 </a></li>
+							<li><a href="school_board1.html">교육 목표</a></li>
+							<li><a href="school_board1.html">교육 과정</a></li>
+							<li><a href="school_board1.html">교직원 소개</a></li>
+							<li><a href="school_board1.html">오시는 길</a></li>
 						</ul>
 					</nav>
 				</div>
