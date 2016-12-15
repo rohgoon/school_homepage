@@ -25,6 +25,7 @@ body {
 	position: absolute;
 	left: 5%;
 	top: 50px;
+	
 	background-color: rgb(20, 100, 170);
 	z-index: 95;
 }
@@ -130,6 +131,6 @@ footer {
 		height: 80px;
 		width: inherit;
 		border-radius: 0;
-	}
+	} 
 
 }

@@ -44,9 +44,16 @@ $(function() {
 			});
 			$('#head #menuSlider').css('display', 'none');
 			$('#topBoard div').css('visibility', 'visible');
+			
+			//
+			
 			$aside.css('visibility', 'hidden');
+			
+			
+			//
+			
 			$aside.stop().animate({
-				'left' : '-250px'
+				'top' : '-600px'
 			}, 300);
 			$aside.removeClass("asideOpen");
 

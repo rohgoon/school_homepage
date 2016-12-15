@@ -25,10 +25,10 @@
 #menuSlider_wrap {
 	position: fixed;
 	width: 250px;
-	height: 100%;
-	top: 80px;
+	height: auto;
+	top: -600px;
 	background-color: rgba(255, 167, 167, 0.8);
-	left: -350px;
+	left: 0px;
 }
 
 #menuSlider_wrap ul#ms_front {
@@ -75,16 +75,14 @@
 	#menuSlider{
 		display: none !important;
 	}
-	
-	#menuSlider_wrap {
-		position: fixed;
-		width: 105% !important;
-		height: auto; /* 600px*/
-		top: -600px;			
-		background-color: rgb(255, 167, 167);
-		text-align : center;
+	aside{
+		visibility : visible !important;
+	}
+	#menuSlider_wrap{
+		width:105% !important;
 		
 	}
+	
 	#menuSlider_wrap ul#ms_front {
 		margin: 0;
 		padding: 0;
