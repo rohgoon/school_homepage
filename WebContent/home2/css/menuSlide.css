@@ -80,7 +80,7 @@
 		position: fixed;
 		width: 105% !important;
 		height: auto; /* 600px*/
-		top: 80px;
+		top: -600px;			
 		background-color: rgb(255, 167, 167);
 		text-align : center;
 		

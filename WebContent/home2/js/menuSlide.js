@@ -69,19 +69,45 @@ $(function() {
 		if ($aside.hasClass("asideOpen")) {
 			
 				$aside.stop().animate({
-					'left' : '-10px'
+					/*'left' : '-10px'*/
+					'top' : '80px'
 				}, 300);
 			
 
 		} else {
 			
 				$aside.stop().animate({
-					'left' : '-250px'
+					/*'left' : '-250px'*/
+					'top' : '-600px'
 				}, 300);
 			
 		}
 	});
+	
+	// sm_mySlider 이벤트
+	
+	var $smsButton = $('#sm_menuSlider');
+	
+	$smsButton.on('click', function() {
+		$aside.toggleClass("asideOpen"); 
 
+		if ($aside.hasClass("asideOpen")) {
+			
+				$aside.stop().animate({
+					'top' : '80px'
+				}, 300);
+			
+
+		} else {
+			
+				$aside.stop().animate({
+					'top' : '-600px'
+				}, 300);
+			
+		}
+	});
+	
+	
 	// 메뉴 슬라이더내 내부 이벤트
 
 	$('.ms_li1').on('mouseenter click focusin', function() {

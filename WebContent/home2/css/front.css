@@ -116,9 +116,20 @@ footer {
 		margin: 7px !important;
 		font-size: 14px !important;
 	}
-	#head{
-		
 	
+	#topBoard {
+		height: 0px !important;
+	}
+	#head{
+		position: fixed;
+		top: 0;
+		left: 0;
+		background:url("../image/sm_logo.png") no-repeat center !important;
+		background-color: rgb(20, 100, 170) !important;
+		background-size: contain !important;
+		height: 80px;
+		width: inherit;
+		border-radius: 0;
 	}
 
 }
