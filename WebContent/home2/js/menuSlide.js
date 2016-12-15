@@ -1,10 +1,10 @@
 $(function() {
 	var $aside = $('aside');
-	var $asideButton = $('#menuSlider'); // 슬라이드 버튼 요소
+	var $asideButton = $('#menuSlider');
+	var $smsButton = $('#sm_menuSlider');// 슬라이드 버튼 요소
 
 	// sticky_header 커스텀 수행 시작
 	var headerOffset = $('#head').offset().top;
-
 	$(window).on('scroll', function() {
 		if ($(window).scrollTop() > headerOffset) {
 			$('#head').addClass("sticky_header");
@@ -31,7 +31,7 @@ $(function() {
 			$('#head').removeClass("sticky_header");
 
 			$('#topBoard').stop().animate({
-				'height' : 55 + '%'
+				'height' : 627 + 'px'
 			}, 300);
 			$('#loginBtn').css({
 				'padding' : '30px 10px 30px 10px',
@@ -44,20 +44,33 @@ $(function() {
 			});
 			$('#head #menuSlider').css('display', 'none');
 			$('#topBoard div').css('visibility', 'visible');
-			
-			
-			if($(window).width()>1000+'px'){// 작은 사이즈 창에서 탑스크롤시에도 슬라이드 메뉴가 안없어짐.
-			$aside.css('visibility', 'hidden');
-			
-			
-			$aside.stop().animate({
-				'top' : '-600px'
-			}, 300);
-			$aside.removeClass("asideOpen");
+
+			if ($(window).width() > 1000 + 'px') {// 작은 사이즈 창에서 탑스크롤시에도 슬라이드
+													// 메뉴가 안없어짐.
+				$aside.css('visibility', 'hidden');
+
+				$aside.stop().animate({
+					'top' : '-600px'
+				}, 300);
+				$aside.removeClass("asideOpen");
 			}
 		}
 
 	}); // sticky_header 커스텀 끝
+
+	$(window).on('resize', function() {
+		if ($aside.hasClass("asideOpen")) {
+				
+			$aside.css({
+				'top' : '-600px'
+			});
+			$aside.removeClass("asideOpen");
+			$smsButton.find('img').prop('src', 'image/menuSlider1.png');
+		}else{
+			
+			
+		}
+	});
 
 	// 슬라이드 다운시 메뉴 슬라이더 버튼 등 시작
 	$('#menuSlider').on('mouseover click', function() {
@@ -70,49 +83,44 @@ $(function() {
 	$asideButton.on('click', function() {
 		$aside.toggleClass("asideOpen"); // boolean 대신에 가상 클래스로 줌. 다른 방식도
 		// 가능
-
+		$aside.css('visibility', 'visible');
 		if ($aside.hasClass("asideOpen")) {
-			
-				$aside.stop().animate({
-					/*'left' : '-10px'*/
-					'top' : '80px'
-				}, 300);
-			
+
+			$aside.stop().animate({
+				/* 'left' : '-10px' */
+				'top' : '80px'
+			}, 300);
 
 		} else {
-			
-				$aside.stop().animate({
-					/*'left' : '-250px'*/
-					'top' : '-600px'
-				}, 300);
-			
+
+			$aside.stop().animate({
+				/* 'left' : '-250px' */
+				'top' : '-600px'
+			}, 300);
+
 		}
 	});
-	
+
 	// sm_mySlider 이벤트
-	
-	var $smsButton = $('#sm_menuSlider');
-	
+
 	$smsButton.on('click', function() {
-		$aside.toggleClass("asideOpen"); 
+		$aside.toggleClass("asideOpen");
 
 		if ($aside.hasClass("asideOpen")) {
 			$smsButton.find('img').prop('src', 'image/menuSlider2.png');
-				$aside.stop().animate({
-					'top' : '80px'
-				}, 300);
-			
+			$aside.stop().animate({
+				'top' : '80px'
+			}, 300);
 
 		} else {
 			$smsButton.find('img').prop('src', 'image/menuSlider1.png');
-				$aside.stop().animate({
-					'top' : '-600px'
-				}, 300);
-			
+			$aside.stop().animate({
+				'top' : '-600px'
+			}, 300);
+
 		}
 	});
-	
-	
+
 	// 메뉴 슬라이더내 내부 이벤트
 
 	$('.ms_li1').on('mouseenter click focusin', function() {

@@ -76,7 +76,7 @@
 		display: none !important;
 	}
 	aside{
-		visibility : visible !important;
+		visibility : visible;
 	}
 	#menuSlider_wrap{
 		width:105% !important;
