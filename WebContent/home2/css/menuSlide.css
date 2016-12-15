@@ -80,7 +80,7 @@
 	}
 	#menuSlider_wrap{
 		width:105% !important;
-		
+		background-color: rgb(255, 167, 167);
 	}
 	
 	#menuSlider_wrap ul#ms_front {

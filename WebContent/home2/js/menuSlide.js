@@ -99,14 +99,14 @@ $(function() {
 		$aside.toggleClass("asideOpen"); 
 
 		if ($aside.hasClass("asideOpen")) {
-			
+			$smsButton.find('img').prop('src', 'image/allowUp.png');
 				$aside.stop().animate({
 					'top' : '80px'
 				}, 300);
 			
 
 		} else {
-			
+			$smsButton.find('img').prop('src', 'image/allowDown.png');
 				$aside.stop().animate({
 					'top' : '-600px'
 				}, 300);
