@@ -10,10 +10,14 @@ $(function() {
 				$('#head').addClass("sticky_header");
 				
 				$('#topBoard').stop().animate({'height':80+'px'}, 300);
-				$('#loginBtn').css({
-					'padding' : '10px',
-					'margin' : '20px'
-				});
+				
+					$('#loginBtn').css({
+						'padding' : '10px',
+						'margin' : '20px'
+					});					
+					
+				
+				
 				$('#headInner').css('display', 'none');
 				$('#homeLogo').attr('src', 'image/logoSmall.png').css({
 					'height' : '50px',
