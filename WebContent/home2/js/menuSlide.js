@@ -8,13 +8,13 @@ $(function() {
 		$(window).on('scroll', function() {
 			if ($(window).scrollTop() > headerOffset) {
 				$('#head').addClass("sticky_header");
-				//$('#topBoard').css('height', '80px');
+				
 				$('#topBoard').stop().animate({'height':80+'px'}, 300);
 				$('#loginBtn').css({
 					'padding' : '10px',
 					'margin' : '20px'
 				});
-				$('#headInner').css('visibility', 'hidden');
+				$('#headInner').css('display', 'none');
 				$('#homeLogo').attr('src', 'image/logoSmall.png').css({
 					'height' : '50px',
 					'margin' : '15px'
@@ -25,13 +25,13 @@ $(function() {
 
 			} else {
 				$('#head').removeClass("sticky_header");
-				//$('#topBoard').css('height', '55%');
+				
 				$('#topBoard').stop().animate({'height':55+'%'}, 300);
 				$('#loginBtn').css({
 					'padding' : '30px 10px 30px 10px',
 					'margin' : '14px 20px 14px 30px'
 				});
-				$('#headInner').css('visibility', 'visible');
+				$('#headInner').css('display', 'block');
 				$('#homeLogo').attr('src', 'image/logo.png').css({
 					'height' : '90px',
 					'margin' : '10px'
