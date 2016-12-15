@@ -45,18 +45,16 @@ $(function() {
 			$('#head #menuSlider').css('display', 'none');
 			$('#topBoard div').css('visibility', 'visible');
 			
-			//
 			
+			if($(window).width()>1000+'px'){// 작은 사이즈 창에서 탑스크롤시에도 슬라이드 메뉴가 안없어짐.
 			$aside.css('visibility', 'hidden');
 			
-			
-			//
 			
 			$aside.stop().animate({
 				'top' : '-600px'
 			}, 300);
 			$aside.removeClass("asideOpen");
-
+			}
 		}
 
 	}); // sticky_header 커스텀 끝
@@ -99,14 +97,14 @@ $(function() {
 		$aside.toggleClass("asideOpen"); 
 
 		if ($aside.hasClass("asideOpen")) {
-			$smsButton.find('img').prop('src', 'image/allowUp.png');
+			$smsButton.find('img').prop('src', 'image/menuSlider2.png');
 				$aside.stop().animate({
 					'top' : '80px'
 				}, 300);
 			
 
 		} else {
-			$smsButton.find('img').prop('src', 'image/allowDown.png');
+			$smsButton.find('img').prop('src', 'image/menuSlider1.png');
 				$aside.stop().animate({
 					'top' : '-600px'
 				}, 300);
