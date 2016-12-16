@@ -18,7 +18,7 @@ $(function() {
 				'margin' : '20px'
 			});
 
-			$('#headInner').css('display', 'none');
+			$('#headInner').css('display', 'none');//
 			$('#homeLogo').attr('src', 'image/logoSmall.png').css({
 				'height' : '50px',
 				'margin' : '15px'
@@ -37,7 +37,7 @@ $(function() {
 				'padding' : '30px 10px 30px 10px',
 				'margin' : '14px 20px 14px 30px'
 			});
-			$('#headInner').css('display', 'block');
+			$('#headInner').css('display', 'block');//
 			$('#homeLogo').attr('src', 'image/logo.png').css({
 				'height' : '90px',
 				'margin' : '10px'
@@ -152,7 +152,15 @@ $(function() {
 		}
 	});
 	
-	
+	$("#head").click(function(e) { // header 여백 클릭시 홈으로 이동
+		
+		if($(e.target).hasClass('headIn') ==false){
+			return true;			
+		}else {
+			$(location).attr('href', 'index.html');
+			
+		}
+	});
 	
 
 });
