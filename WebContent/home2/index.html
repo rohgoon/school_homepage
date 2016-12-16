@@ -7,66 +7,17 @@
 <link type="text/css" rel="stylesheet" href="css/navbar.css">
 <link type="text/css" rel="stylesheet" href="css/menuSlide.css">
 <link type="text/css" rel="stylesheet" href="css/magnific-popup.css">
+<link type="text/css" rel="stylesheet" href="css/loginPopup.css">
 <style type="text/css">
-	.lblLogin{
 	
-		width: 70px !important; 
-		display: inline-block;
-	}
-	#test-form h1{
-		color: rgb(20, 100, 170);
-	}
-	#loginOkBtn{
-		border: none;
-		width: 100px;
-		background-color: rgba(20, 100, 170, 0.7);
-		padding: 5px;
-		color: #fff;
-	}
-	.join{
-		color: rgb(20, 100, 170);
-		text-decoration: none;
-	}
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/menuSlide.js"></script>
 <script src="js/jquery.magnific-popup.js"></script>
+<script src="js/loginPopup.js"></script>
 <script type="text/javascript">
-//로그인 버튼 이벤트
-$(document).ready(function() {
-	$('.popup-with-form').magnificPopup({
-		type: 'inline',
-		preloader: false,
-		focus: '#name',
 
-		// When elemened is focused, some mobile browsers in some cases zoom in
-		// It looks not nice, so we disable it:
-		callbacks: {
-			beforeOpen: function() {
-				if($(window).width() < 700) {
-					this.st.focus = false;
-				} else {
-					this.st.focus = '#name';
-				}
-			}
-		}
-	});
-	$('#test-form').css({
-		'margin':'0 auto',
-		'background-color':'rgb(255,255,255)',
-		'width':'60%',
-		'padding':'5px',
-		'line-height': '3em',
-		'position': 'relative',
-		'text-align':'center'
-	});
-	
-	$('#test-form').find('li').css({
-		'list-style': 'none'
-	});
-	
-});
 
 </script>
 </head>
