@@ -64,7 +64,14 @@ img#homeLogo {
 	font-weight: bold;
 	font-size: 16px;
 }
-
+#head #loginBtn a{
+	color:rgb(20, 100, 170);
+	text-decoration: none;
+	
+}
+#head #loginBtn a:focus{
+	outline: 0;
+}
 #mainBoard {
 	/* border: 1px solid red; */
 	width: 100%;

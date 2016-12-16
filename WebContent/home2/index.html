@@ -6,16 +6,68 @@
 <link type="text/css" rel="stylesheet" href="css/front.css">
 <link type="text/css" rel="stylesheet" href="css/navbar.css">
 <link type="text/css" rel="stylesheet" href="css/menuSlide.css">
-<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+<link type="text/css" rel="stylesheet" href="css/magnific-popup.css">
 <style type="text/css">
+	.lblLogin{
 	
+		width: 70px !important; 
+		display: inline-block;
+	}
+	#test-form h1{
+		color: rgb(20, 100, 170);
+	}
+	#loginOkBtn{
+		border: none;
+		width: 100px;
+		background-color: rgba(20, 100, 170, 0.7);
+		padding: 5px;
+		color: #fff;
+	}
+	.join{
+		color: rgb(20, 100, 170);
+		text-decoration: none;
+	}
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/menuSlide.js"></script>
-<script src="magnific-popup/jquery.magnific-popup.js"></script>
+<script src="js/jquery.magnific-popup.js"></script>
 <script type="text/javascript">
+//로그인 버튼 이벤트
+$(document).ready(function() {
+	$('.popup-with-form').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#name',
+
+		// When elemened is focused, some mobile browsers in some cases zoom in
+		// It looks not nice, so we disable it:
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+	$('#test-form').css({
+		'margin':'0 auto',
+		'background-color':'rgb(255,255,255)',
+		'width':'60%',
+		'padding':'5px',
+		'line-height': '3em',
+		'position': 'relative',
+		'text-align':'center'
+	});
 	
+	$('#test-form').find('li').css({
+		'list-style': 'none'
+	});
+	
+});
+
 </script>
 </head>
 <body>
@@ -52,7 +104,9 @@
 					class="menu-trigger trigger icon icon-menu nav-btn"
 					rel="nav-overlay7" id="nav7"></span>
 			</div>
-			<button id="loginBtn">로그인</button>
+			<button id="loginBtn">
+				<a class="popup-with-form" href="#test-form">로그인</a>
+			</button>
 		</header>
 
 		<section id="mainBoard">
@@ -216,6 +270,32 @@
 			</aside>
 
 			<article id="bottomBoard">
+				<form id="test-form" class="white-popup-block mfp-hide">
+					
+						<h1>로그인</h1>
+						<fieldset style="border: 0;">
+							
+							<ol>
+								<li><label for="name" class="lblLogin">아이디</label> <input id="name"
+									name="name" type="text" placeholder="아이디" required="">
+								</li>
+								<li><label for="password" class="lblLogin">비밀번호</label> <input id="password"
+									name="password" type="password"	required=""></li>
+								
+								</li>
+								
+							</ol>
+							<p id="loginOkWrap">
+								<button id="loginOkBtn">로그인</button>
+							</p>
+							<p>
+								<a href="#" class="join">회원가입, </a> <a href="#" class="join">아이디/비밀번호 찾기</a>
+							</p>
+						</fieldset>
+					
+				</form> 
+				
+				
 				
 			</article>
 		</section>

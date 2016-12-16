@@ -152,10 +152,7 @@ $(function() {
 		}
 	});
 	
-	//로그인 버튼 이벤트
-	$('#loginBtn').click(function() {
-		
-	});
+	
 	
 
 });
