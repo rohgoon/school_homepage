@@ -66,9 +66,12 @@ $(function() {
 			});
 			$aside.removeClass("asideOpen");
 			$smsButton.find('img').prop('src', 'image/menuSlider1.png');
-		}else{
-			
-			
+		}
+		
+		$('#topBoard div').removeClass('open');
+		if ($('.trigger').hasClass("block-scroll")) {
+			$('html').removeClass('disable-scroll');
+			$('#overlay-mobile').removeClass('visible');
 		}
 	});
 
